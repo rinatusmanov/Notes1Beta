@@ -456,12 +456,12 @@ window.addEventListener("load",function () {
     });               
 });
 function createFindListing() {
-    var val = document.querySelector("#findInput").value;
+    var val = document.querySelector("#findInput").value.toLowerCase();
     var keys = Object.keys(Notes);
         var s = "";
         for (var i = 0; i < keys.length; i++) {
             try {
-                if (Notes[keys[i]]["title"].indexOf(val) != -1)
+                if (Notes[keys[i]]["title"].toLowerCase().indexOf(val) != -1)
                     s += "<tr><td tabindex='1' title='" + Notes[keys[i]]["body"] + "'  data-cat='" + Notes[keys[i]]["cat"] + "' data-key='" + keys[i] + "'>" + Notes[keys[i]]["title"] + "</td></tr>";
             } catch (ex) {}
         }
